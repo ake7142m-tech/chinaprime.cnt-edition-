@@ -1,0 +1,19 @@
+{
+  "crons": [
+    {
+      "path": "/api/sms?action=process",
+      "schedule": "*/15 * * * *",
+      "comment": "Process queued SMS every 15 minutes"
+    },
+    {
+      "path": "/api/sms?action=reminders",
+      "schedule": "0 2 * * *",
+      "comment": "Queue 3-day pre-travel reminders at 09:00 ICT (02:00 UTC)"
+    },
+    {
+      "path": "/api/seats/sync",
+      "schedule": "0 */2 * * *",
+      "comment": "Sync seat availability from airline/operator API every 2 hours"
+    }
+  ]
+}
