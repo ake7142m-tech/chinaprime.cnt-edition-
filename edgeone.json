@@ -1,0 +1,44 @@
+{
+  "buildCommand": "next build",
+  "installCommand": "npm install",
+  "outputDirectory": ".next",
+  "nodeVersion": "18",
+  "cloudFunctions": {
+    "nodejs": {
+      "runtime": "nodejs18"
+    }
+  },
+  "agents": {
+    "dir": "agents",
+    "framework": "claude-agent-sdk",
+    "timeout": 300,
+    "sandbox": {
+      "timeout": 300
+    },
+    "externalNodeModules": []
+  },
+  "headers": [
+    {
+      "source": "/api/:path*",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET,POST,PUT,DELETE,OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type,Authorization,makers-conversation-id" }
+      ]
+    }
+  ],
+  "caches": [
+    {
+      "source": "/_next/static/:path*",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/images/:path*",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    }
+  ]
+}

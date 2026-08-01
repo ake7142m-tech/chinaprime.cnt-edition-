@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=Noto+Sans+Thai:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Sarabun', 'Noto Sans Thai', sans-serif;
+  }
+
+  body {
+    background-color: #F7F7F7;
+    color: #333333;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.3;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded font-thai text-base hover:bg-primary-dark transition-colors duration-150;
+  }
+
+  .btn-secondary {
+    @apply bg-accent text-neutral-900 px-6 py-3 rounded font-thai text-base hover:bg-accent-dark transition-colors duration-150;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded font-thai text-base hover:bg-primary hover:text-white transition-colors duration-150;
+  }
+
+  .card-flat {
+    @apply bg-white border border-neutral-200 rounded p-4;
+  }
+
+  .card-flat-hover {
+    @apply bg-white border border-neutral-200 rounded p-4 hover:border-primary transition-colors duration-150;
+  }
+
+  .input-flat {
+    @apply bg-white border border-neutral-300 rounded px-4 py-2 font-thai text-base focus:border-primary focus:outline-none;
+  }
+
+  .label-flat {
+    @apply block text-neutral-700 font-thai text-sm mb-1;
+  }
+
+  .img-placeholder {
+    @apply bg-neutral-200 flex items-center justify-center text-neutral-400 font-thai text-sm;
+  }
+
+  .section-title {
+    @apply text-2xl font-thai font-bold text-neutral-800 mb-4;
+  }
+
+  .page-container {
+    @apply max-w-6xl mx-auto px-4 py-8;
+  }
+}
