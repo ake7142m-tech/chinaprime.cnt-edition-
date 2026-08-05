@@ -6,19 +6,18 @@ export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('pdpa_consent');
-    if (!consent) {
+    if (!document.cookie.includes('pdpa_consent=accepted') && !document.cookie.includes('pdpa_consent=rejected')) {
       setVisible(true);
     }
   }, []);
 
   function accept() {
-    localStorage.setItem('pdpa_consent', 'accepted');
+    document.cookie = 'pdpa_consent=accepted; path=/; max-age=31536000; SameSite=Lax';
     setVisible(false);
   }
 
   function reject() {
-    localStorage.setItem('pdpa_consent', 'rejected');
+    document.cookie = 'pdpa_consent=rejected; path=/; max-age=31536000; SameSite=Lax';
     setVisible(false);
   }
 

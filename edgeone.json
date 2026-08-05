@@ -15,7 +15,18 @@
     "sandbox": {
       "timeout": 300
     },
-    "externalNodeModules": []
+    "externalNodeModules": [],
+    "memoryQuota": {
+      "maxMessagesPerConversation": 20
+    }
+  },
+  "kvNamespaces": {
+    "TOURS": "TOURS",
+    "USERS": "USERS",
+    "BOOKINGS": "BOOKINGS",
+    "CONTENT": "CONTENT",
+    "STATS": "STATS",
+    "CHAT_SESSIONS": "CHAT_SESSIONS"
   },
   "headers": [
     {
